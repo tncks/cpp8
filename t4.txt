@@ -1,0 +1,30 @@
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+template <typename T>
+T myFunc(T a, T b)
+{
+	return a + b;
+}
+
+template <>
+char* myFunc<char *>(char* a, char* b)
+{
+	int len = strlen(a) + strlen(b) + 1;
+	char * temp = new char[len];
+	strcpy_s(temp, len, a);
+	strcat_s(temp, len, b);
+	return temp;
+}
+
+int main()
+{
+	char str1[10] = "c++ ";
+	char str2[10] = "is easy";
+	cout << myFunc(2.5, 3.7) << endl;
+	cout << myFunc(str1, str2) << endl;
+
+	return 0;
+}

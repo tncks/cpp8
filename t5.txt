@@ -1,0 +1,25 @@
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+template <typename T>
+class MyClass {
+private:
+	T x;
+public:
+	MyClass(T x_) : x(x_) {
+	}
+
+	T cal_double() {
+		return x * 2;
+	}
+};
+
+int main()
+{
+	auto obj = MyClass<int>(3);
+	cout << obj.cal_double() << endl;
+
+	return 0;
+}

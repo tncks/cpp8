@@ -1,0 +1,15 @@
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+template <typename T1, typename T2>
+T2 cast(T1 a)
+{
+	return (T2)a;
+}
+
+int main()
+{
+	cout << cast<int, double>(3.4) << endl;
+}
